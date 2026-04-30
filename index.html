@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Maique Barber - Estilo e Tradição</title>
 </head>
 <body>
@@ -11,14 +12,14 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="src/imgs/MAIQUE BARBER.png" alt="Maique Barber Logo">
+                <img src="src/imgs/logo preta.png" alt="Maique Barber Logo">
             </div>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#servicos">SERVIÇOS</a></li>
+                <li><a href="#sobre">SOBRE NÓS</a></li>
+                <li><a href="#depoimentos">DEPOIMENTOS</a></li>
+                <li><a href="#contato">CONTATO</a></li>
             </ul>
         </nav>
     </header>
@@ -33,7 +34,7 @@
         <section id="servicos">
             <h2>Nossos Serviços</h2>
             <div class="tabela-wrapper">
-                <table>
+                <table class="tabela-precos">
                     <thead>
                         <tr>
                             <th>Serviço</th>
@@ -43,19 +44,19 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Corte Social/Fade</td>
-                            <td>Tesoura ou máquina com acabamento impecável.</td>
-                            <td>R$ 50,00</td>
+                            <td data-label="Serviço">Corte Social/Fade</td>
+                            <td data-label="Descrição">Tesoura ou máquina com acabamento impecável.</td>
+                            <td data-label="Preço">R$ 50,00</td>
                         </tr>
                         <tr>
-                            <td>Barba Premium</td>
-                            <td>Toalha quente, terapia com óleos e navalha.</td>
-                            <td>R$ 40,00</td>
+                            <td data-label="Serviço">Barba Premium</td>
+                            <td data-label="Descrição">Toalha quente, terapia com óleos e navalha.</td>
+                            <td data-label="Preço">R$ 40,00</td>
                         </tr>
                         <tr>
-                            <td>Combo VIP</td>
-                            <td>Cabelo + Barba + Lavagem especial.</td>
-                            <td>R$ 80,00</td>
+                            <td data-label="Serviço">Combo VIP</td>
+                            <td data-label="Descrição">Cabelo + Barba + Lavagem especial.</td>
+                            <td data-label="Preço">R$ 80,00</td>
                         </tr>
                     </tbody>
                 </table>
@@ -65,15 +66,15 @@
         <section id="sobre">
             <h2>Por que escolher a Maique Barber?</h2>
             <div class="sobre-container">
-                <article>
+                <article class="card">
                     <h3>Profissionais Especialistas</h3>
                     <p>Barbeiros experientes no mercado.</p>
                 </article>
-                <article>
+                <article class="card">
                     <h3>Ambiente Climatizado</h3>
                     <p>Wi-fi, café cortesia e VideoGame para espera.</p>
                 </article>
-                <article>
+                <article class="card">
                     <h3>Localização Fácil</h3>
                     <p>Estacionamento gratuito no local.</p>
                 </article>
@@ -82,9 +83,21 @@
 
         <section id="depoimentos">
             <h2>O que nossos clientes dizem</h2>
-            <div class="depoimento-card">
-                <p>"Melhor atendimento que já tive. O ambiente é sensacional e o corte ficou perfeito."</p>
-                <cite>— Lucas Silva</cite>
+            <div class="depoimento-container">
+                <div class="depoimento-card">
+                    <p>"Melhor atendimento que já tive. O ambiente é sensacional e o corte ficou perfeito."</p>
+                    <cite>— Lucas Silva</cite>
+                </div>
+
+                <div class="depoimento-card">
+                    <p>"Melhor atendimento que já tive. O ambiente é sensacional e o corte ficou perfeito."</p>
+                    <cite>— Lucas Silva</cite>
+                </div>
+
+                <div class="depoimento-card">
+                    <p>"Melhor atendimento que já tive. O ambiente é sensacional e o corte ficou perfeito."</p>
+                    <cite>— Lucas Silva</cite>
+                </div>
             </div>
         </section>
 
@@ -98,28 +111,22 @@
                         <a href="https://wa.me/5571983410546" target="_blank" class="link-whatsapp">(71) 98341-0546</a>
                     </p>
                 </div>
-                
                 <div class="mapa-box">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.3421711246175!2d-38.3845!3d-12.9178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x716104998246f33%3A0x6b47c0a6b72a8c3d!2sR.%20Lu%C3%ADs%20Martins%20Catharino%20Gordilho%2C%2077%20-%20Fazenda%20Grande%20III%2C%20Salvador%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
-                        width="100%" 
-                        height="350" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.2612743841123!2d-38.3846152!3d-12.9157252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71610317e335293%3A0x6e9f9065a49f8742!2sR.%20Luis%20Martins%20Catharino%20Gordilho%2C%2077%20-%20Fazenda%20Grande%20III%2C%20Salvador%20-%20BA!5e0!3m2!1spt-BR!2sbr!4v1714480000000" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Maique Barber. Todos os direitos reservados.</p>
-        <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-        </div>
-    </footer>
+    <p>© 2026 Maique Barber. Todos os direitos reservados.</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/maique_barber99/" target="_blank" class="instagram-link">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
+    </div>
+</footer>
 
 </body>
 </html>
