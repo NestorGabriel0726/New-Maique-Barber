@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <title>Maique Barber - Estilo e Tradição</title>
+
+    <link rel="icon" type="image/png" href="src/imgs/logoIcon.png">
+
 </head>
 <body>
 
@@ -14,7 +19,12 @@
             <div class="logo">
                 <img src="src/imgs/logo preta.png" alt="Maique Barber Logo">
             </div>
-            <ul>
+
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#servicos">SERVIÇOS</a></li>
                 <li><a href="#sobre">SOBRE NÓS</a></li>
@@ -101,6 +111,12 @@
         <section id="galeria">
             <h2>Transformações Reais</h2>
             <div class="galeria-grid">
+
+                <div class="galeria-item">
+                    <img src="src/imgs/galeria/corte1.jpg.jpeg" alt="Degradê Navalhado">
+                    <div class="legenda">Degradê Navalhado</div>
+                </div>
+
                 <div class="galeria-item">
                     <video autoplay muted loop playsinline>
                         <source src="src/imgs/galeria/video5.jpg.mp4" type="video/mp4">
@@ -109,13 +125,15 @@
                 </div>
 
                 <div class="galeria-item">
-                    <img src="src/imgs/galeria/corte1.jpg.jpeg" alt="Degradê Navalhado">
-                    <div class="legenda">Degradê Navalhado</div>
+                    <img src="src/imgs/galeria/corte4.jpg.jpeg" alt="Corte com Risco">
+                    <div class="legenda">Corte com Risco</div>
                 </div>
 
                 <div class="galeria-item">
-                    <img src="src/imgs/galeria/corte4.jpg.jpeg" alt="Corte com Risco">
-                    <div class="legenda">Corte com Risco</div>
+                    <video autoplay muted loop playsinline>
+                        <source src="src/imgs/galeria/video6.mp4" type="video/mp4">
+                    </video>
+                    <div class="legenda">Acabamento preciso</div>
                 </div>
 
                 <div class="galeria-item">
@@ -159,8 +177,10 @@
                 <div class="contato-info">
                     <p><strong>📍 Endereço:</strong><br> R. Luis Martins Catharino Gordilho, 77 - Fazenda Grande III, Salvador - BA</p>
                     <p><strong>⏰ Horário:</strong><br> Ter. a Sáb. (09h - 20h)</p>
-                    <p><strong>💬 WhatsApp:</strong><br> 
-                        <a href="https://wa.me/5571983410546" target="_blank" class="link-whatsapp">(71) 98341-0546</a>
+                    <p><strong> <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.2rem; margin-right: 5px;"></i> WhatsApp: </strong><br> 
+                        <a href="https://wa.me/5571983410546" target="_blank" class="link-whatsapp">
+                            (71) 98341-0546
+                        </a>
                     </p>
                 </div>
                 <div class="mapa-box">
@@ -179,6 +199,52 @@
         </a>
     </div>
 </footer>
+
+<script>
+    let ultimoScroll = 0;
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', () => {
+        const scrollAtual = window.pageYOffset;
+
+        if (scrollAtual <= 0) {
+            header.classList.remove('header-escondido');
+            return;
+        }
+
+        if (scrollAtual > ultimoScroll && !header.classList.contains('header-escondido')) {
+            // Rolou para baixo - Esconde
+            header.classList.add('header-escondido');
+        } else if (scrollAtual < ultimoScroll && header.classList.contains('header-escondido')) {
+            // Rolou para cima - Mostra
+            header.classList.remove('header-escondido');
+        }
+        ultimoScroll = scrollAtual;
+    });
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const links = document.querySelectorAll('.nav-links li a');
+
+    // Abre/Fecha o menu ao clicar no hambúrguer
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Muda o ícone de barras para um "X" quando aberto
+        const icon = menuToggle.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-xmark');
+    });
+
+    // Fecha o menu automaticamente ao clicar em um link
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-xmark');
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -33,13 +33,70 @@ body {
 header {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(8px);
-    padding: 15px 0;
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--primaria);
-    transition: var(--transicao);
+    transition: transform 0.8s ease-in-out; /* Transição suave para subir/descer */
+}
+
+/* Classe que o JavaScript vai adicionar para esconder o menu */
+header.header-escondido {
+    transform: translateY(-100%);
+}
+
+/* Efeito Hover Bacana: Quando o mouse passa no header, ele ganha um brilho */
+header:hover {
+    border-bottom-color: #fff; /* Muda a borda para branco ou um dourado mais claro */
+    box-shadow: 0 4px 20px rgba(188, 148, 92, 0.3);
+}
+
+/* Esconde o botão no Desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primaria);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* MEDIA QUERY PARA MOBILE */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra o hambúrguer */
+        z-index: 1001;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Começa fora da tela */
+        width: 70%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        border-left: 2px solid var(--primaria);
+    }
+
+    /* Classe que o JS vai ativar */
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
+
+    .nav-links a {
+        font-size: 1.4rem;
+    }
 }
 
 nav {
@@ -155,6 +212,20 @@ nav ul li a:hover {
         background-size: 100% auto; /* Força a largura 100% no mobile */
         min-height: 400px;
         padding-top: 150px;
+    }
+
+    nav {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .logo {
+        flex: 1;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        width: 12%;
     }
 }
 
@@ -332,6 +403,20 @@ h2 {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.link-whatsapp {
+    color: #bc945c; 
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transicao);
+}
+
+.link-whatsapp:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 .mapa-box {
