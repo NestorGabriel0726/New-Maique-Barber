@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Oswald:wght@500;700&display=swap');
+
+:root {
+    --primaria: #bc945c;
+    --escura: #0a0a0a;
+    --cinza-card: #161616;
+    --cinza-ocupado: #222222;
+    --texto: #ffffff;
+    --texto-mutado: #888888;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--escura);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Minimalista */
+.header-agendamento {
+    width: 100%;
+    background-color: var(--cinza-card);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 2px solid var(--primaria);
+}
+
+.btn-voltar {
+    position: absolute;
+    left: 20px;
+    color: var(--texto);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.btn-voltar:hover { color: var(--primaria); }
+.logo-min { height: 50px; }
+
+/* Container Principal */
+.container-agenda {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px 20px;
+}
+
+.cabecalho-agenda {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho-agenda h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primaria);
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.cabecalho-agenda p { color: var(--texto-mutado); font-size: 0.9rem; margin-bottom: 20px; }
+
+/* Seletor de Data */
+.seletor-data {
+    display: inline-block;
+    background: var(--cinza-card);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.seletor-data label {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    color: var(--primaria);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.seletor-data input {
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    color-scheme: dark; /* Faz o calendário nativo ficar escuro */
+}
+
+/* Grid de Horários */
+.grid-horarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Estilo Base dos Cards */
+.card-horario {
+    border-radius: 8px;
+    padding: 20px 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hora {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.status {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Vaga Livre */
+.livre {
+    background-color: transparent;
+    border: 2px solid var(--primaria);
+    color: var(--primaria);
+    cursor: pointer;
+}
+
+.livre:hover {
+    background-color: var(--primaria);
+    color: var(--escura);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(188, 148, 92, 0.3);
+}
+
+/* Vaga Ocupada */
+.ocupado {
+    background-color: var(--cinza-ocupado);
+    border: 2px solid #333;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.ocupado .status {
+    color: var(--texto-mutado);
+    font-weight: normal;
+}
+
+/* Modal de Reserva */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background: var(--cinza-card);
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 4px solid var(--primaria);
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.hidden .modal-content { transform: scale(0.9); }
+
+.btn-fechar-modal {
+    position: absolute;
+    top: 15px; right: 15px;
+    background: none; border: none;
+    color: #fff; font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--primaria);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.horario-destaque {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed var(--primaria);
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.85rem; color: var(--texto-mutado); margin-bottom: 5px; text-transform: uppercase; }
+.form-group input, .form-group select {
+    width: 100%; padding: 12px; border-radius: 6px;
+    background: #111; border: 1px solid #333; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 1rem;
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--primaria); outline: none; }
+
+.btn-confirmar {
+    width: 100%; padding: 15px;
+    background: var(--primaria); color: #000;
+    border: none; border-radius: 6px;
+    font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: bold; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s;
+}
+.btn-confirmar:hover { background: #a37f4c; color: #fff; }
+
+/* Mensagem de estado vazio (quando o barbeiro não trabalha no dia) */
+.msg-vazia { text-align: center; color: var(--texto-mutado); font-style: italic; grid-column: 1 / -1; padding: 20px; }
+
+/* =========================================
+   ESTILOS DO NOVO MODAL DE SUCESSO
+   ========================================= */
+.text-center {
+    text-align: center;
+}
+
+.icone-sucesso {
+    font-size: 4.5rem;
+    color: var(--primaria);
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.texto-sucesso {
+    margin-bottom: 25px;
+    color: #cccccc;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.texto-sucesso strong {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
+   CUSTOMIZAÇÃO DO CALENDÁRIO (FLATPICKR)
+   ========================================= */
+.seletor-data label i {
+    margin-right: 8px;
+}
+
+/* Esconde a seta padrão dos inputs de data/texto */
+input[type="text"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* Forçando as cores da sua marca no calendário do Flatpickr */
+.flatpickr-calendar.dark {
+    background: var(--cinza-card);
+    border: 1px solid var(--primaria);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.startRange, 
+.flatpickr-day.endRange, 
+.flatpickr-day.selected.inRange, 
+.flatpickr-day.startRange.inRange, 
+.flatpickr-day.endRange.inRange, 
+.flatpickr-day.selected:focus, 
+.flatpickr-day.startRange:focus, 
+.flatpickr-day.endRange:focus, 
+.flatpickr-day.selected:hover, 
+.flatpickr-day.startRange:hover, 
+.flatpickr-day.endRange:hover, 
+.flatpickr-day.selected.prevMonthDay, 
+.flatpickr-day.startRange.prevMonthDay, 
+.flatpickr-day.endRange.prevMonthDay, 
+.flatpickr-day.selected.nextMonthDay, 
+.flatpickr-day.startRange.nextMonthDay, 
+.flatpickr-day.endRange.nextMonthDay {
+    background: var(--primaria) !important;
+    border-color: var(--primaria) !important;
+    color: #0a0a0a !important;
+    font-weight: bold;
+}
+
+.flatpickr-day:hover {
+    background: rgba(188, 148, 92, 0.2);
+}

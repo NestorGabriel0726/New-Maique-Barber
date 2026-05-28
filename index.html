@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/index.css">
@@ -10,7 +9,6 @@
     <title>Maique Barber - Estilo e Tradição</title>
 
     <link rel="icon" type="image/png" href="src/imgs/logoIcon.png">
-
 </head>
 <body>
 
@@ -30,6 +28,7 @@
                 <li><a href="#sobre">SOBRE NÓS</a></li>
                 <li><a href="#depoimentos">DEPOIMENTOS</a></li>
                 <li><a href="#contato">CONTATO</a></li>
+                <li><a href="agendamento.html" class="nav-btn-agendar">AGENDAR AGORA</a></li>
             </ul>
         </nav>
     </header>
@@ -38,54 +37,57 @@
         <section id="home">
             <h1>O Estilo que Você Respeita</h1>
             <p>Mais que um corte, um momento de cuidado. Tradição, navalha afiada e ambiente aconchegante para você.</p>
-            <button type="button" onclick="window.open('https://wa.me/5571983410546', '_blank')">AGENDAR HORÁRIO AGORA</button>
+            <a href="agendamento.html" class="btn-principal-home">AGENDAR HORÁRIO AGORA</a>
         </section>
 
         <section id="servicos">
             <h2>Nossos Serviços</h2>
-                <div class="tabela-wrapper">
-                    <table class="tabela-precos">
-                        <thead>
-                            <tr>
-                                <th>Serviço</th>
-                                <th>Descrição</th>
-                                <th>Preço</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Serviço">Corte Classic</td>
-                                <td data-label="Descrição">Corte social ou degradê com acabamento preciso na máquina e tesoura.</td>
-                                <td data-label="Preço">R$ 25,00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Serviço">Corte Navalhado</td>
-                                <td data-label="Descrição">Degradê clean e sofisticado, raspado na navalha com técnica de excelência.</td>
-                                <td data-label="Preço">R$ 30,00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Serviço">Corte na Tesoura</td>
-                                <td data-label="Descrição">Estilo personalizado totalmente feito na tesoura para um caimento natural.</td>
-                                <td data-label="Preço">R$ 30,00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Serviço">Combo Maique Barber</td>
-                                <td data-label="Descrição">O trato completo: Cabelo + Barba alinhada com acabamento em navalha.</td>
-                                <td data-label="Preço">R$ 35,00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Serviço">Luzes / Reflexo</td>
-                                <td data-label="Descrição">Iluminação dos fios para destacar o corte e trazer um visual moderno.</td>
-                                <td data-label="Preço">R$ 50,00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Serviço">Platinado Global</td>
-                                <td data-label="Descrição">Mudança radical com descoloração segura para um platinado impecável.</td>
-                                <td data-label="Preço">R$ 70,00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="tabela-wrapper">
+                <table class="tabela-precos">
+                    <thead>
+                        <tr>
+                            <th>Serviço</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Serviço">Corte Classic</td>
+                            <td data-label="Descrição">Corte social ou degradê com acabamento preciso na máquina e tesoura.</td>
+                            <td data-label="Preço">R$ 25,00</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Serviço">Corte Navalhado</td>
+                            <td data-label="Descrição">Degradê clean e sofisticado, raspado na navalha com técnica de excelência.</td>
+                            <td data-label="Preço">R$ 30,00</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Serviço">Corte na Tesoura</td>
+                            <td data-label="Descrição">Estilo personalizado totalmente feito na tesoura para um caimento natural.</td>
+                            <td data-label="Preço">R$ 30,00</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Serviço">Combo Maique Barber</td>
+                            <td data-label="Descrição">O trato completo: Cabelo + Barba alinhada com acabamento em navalha.</td>
+                            <td data-label="Preço">R$ 35,00</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Serviço">Luzes / Reflexo</td>
+                            <td data-label="Descrição">Iluminação dos fios para destacar o corte e trazer um visual moderno.</td>
+                            <td data-label="Preço">R$ 50,00</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Serviço">Platinado Global</td>
+                            <td data-label="Descrição">Mudança radical com descoloração segura para um platinado impecável.</td>
+                            <td data-label="Preço">R$ 70,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="agendamento.html" class="btn-tabela">Quero um desses serviços</a>
+            </div>
         </section>
 
         <section id="sobre">
@@ -111,7 +113,6 @@
         <section id="galeria">
             <h2>Transformações Reais</h2>
             <div class="galeria-grid">
-
                 <div class="galeria-item">
                     <img src="src/imgs/galeria/corte1.jpg.jpeg" alt="Degradê Navalhado">
                     <div class="legenda">Degradê Navalhado</div>
@@ -147,8 +148,7 @@
                     </video>
                     <div class="legenda">Finalização na tesoura</div>
                 </div>
-                
-                </div>
+            </div>
         </section>
 
         <section id="depoimentos">
@@ -177,7 +177,12 @@
                 <div class="contato-info">
                     <p><strong>📍 Endereço:</strong><br> R. Luis Martins Catharino Gordilho, 77 - Fazenda Grande III, Salvador - BA</p>
                     <p><strong>⏰ Horário:</strong><br> Ter. a Sáb. (09h - 20h)</p>
-                    <p><strong> <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.2rem; margin-right: 5px;"></i> WhatsApp: </strong><br> 
+                    <div style="margin-top: 20px;">
+                        <a href="agendamento.html" class="btn-principal-home" style="display: inline-block; padding: 12px 20px; font-size: 0.95rem;">
+                            <i class="fa-solid fa-calendar-days"></i> VER HORÁRIOS DISPONÍVEIS
+                        </a>
+                    </div>
+                    <p style="margin-top: 20px;"><strong> <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.2rem; margin-right: 5px;"></i> Dúvidas no WhatsApp: </strong><br> 
                         <a href="https://wa.me/5571983410546" target="_blank" class="link-whatsapp">
                             (71) 98341-0546
                         </a>
@@ -191,60 +196,54 @@
     </main>
 
     <footer>
-    <p>© 2026 Maique Barber. Todos os direitos reservados.</p>
-    <div class="social-links">
-        <a href="https://www.instagram.com/maique_barber99/" target="_blank" class="instagram-link">
-            <i class="fa-brands fa-instagram"></i>
-            <span>Instagram</span>
-        </a>
-    </div>
-</footer>
+        <p>© 2026 Maique Barber. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/maique_barber99/" target="_blank" class="instagram-link">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+    </footer>
 
-<script>
-    let ultimoScroll = 0;
-    const header = document.querySelector('header');
+    <script>
+        let ultimoScroll = 0;
+        const header = document.querySelector('header');
 
-    window.addEventListener('scroll', () => {
-        const scrollAtual = window.pageYOffset;
+        window.addEventListener('scroll', () => {
+            const scrollAtual = window.pageYOffset;
 
-        if (scrollAtual <= 0) {
-            header.classList.remove('header-escondido');
-            return;
-        }
+            if (scrollAtual <= 0) {
+                header.classList.remove('header-escondido');
+                return;
+            }
 
-        if (scrollAtual > ultimoScroll && !header.classList.contains('header-escondido')) {
-            // Rolou para baixo - Esconde
-            header.classList.add('header-escondido');
-        } else if (scrollAtual < ultimoScroll && header.classList.contains('header-escondido')) {
-            // Rolou para cima - Mostra
-            header.classList.remove('header-escondido');
-        }
-        ultimoScroll = scrollAtual;
-    });
-
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const links = document.querySelectorAll('.nav-links li a');
-
-    // Abre/Fecha o menu ao clicar no hambúrguer
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        // Muda o ícone de barras para um "X" quando aberto
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-xmark');
-    });
-
-    // Fecha o menu automaticamente ao clicar em um link
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-xmark');
+            if (scrollAtual > ultimoScroll && !header.classList.contains('header-escondido')) {
+                header.classList.add('header-escondido');
+            } else if (scrollAtual < ultimoScroll && header.classList.contains('header-escondido')) {
+                header.classList.remove('header-escondido');
+            }
+            ultimoScroll = scrollAtual;
         });
-    });
-</script>
 
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+    </script>
 </body>
 </html>
